@@ -12,6 +12,12 @@ FROM python:3.7
 # 環境変数:Pythonの標準出力/標準エラー出力をバッファにため込まないための設定	
 ENV PYTHONUNBUFFERED 1
 
+# パッケージマネージャーの更新
+RUN apt-get -y update
+
+# pipの更新
+RUN pip install --upgrade pip
+
 # アプリケーション用と静的ファイル用ディレクトリの作成・作業ディレクトリの指定
 RUN mkdir -p /code
 RUN mkdir -p /code/static

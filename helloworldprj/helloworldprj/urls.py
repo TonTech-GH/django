@@ -23,5 +23,6 @@ from . import views
 #  - path(<リクエスト>, <繋ぎ先メソッドorクラス>)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', views.Helloworld),
+    path('hello/', views.helloworldfunc),
+    path('hello_class/', views.HelloworldView.as_view())
 ]

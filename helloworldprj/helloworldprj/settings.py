@@ -14,6 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #  - djangoでファイルぱすの基準となるディレクトリ
+#  - このファイル(settings.py)が入っているディレクトリのひとつ上のディレクトリ
+#  - manage.py が入っているディレクトリ
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -59,7 +61,9 @@ ROOT_URLCONF = 'helloworldprj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        # BASE_DIR/templattes にテンプレートを置くよ
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

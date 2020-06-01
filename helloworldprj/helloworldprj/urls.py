@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# モジュールの中では、.を使って相対パスで読み込むモジュールを指定する
+# from .views import Helloworld
+from . import views
 
+# ここのURLパターンに応じてview等に繋ぐ
+#  - path(<リクエスト>, <繋ぎ先メソッドorクラス>)
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hello/', views.Helloworld),
 ]

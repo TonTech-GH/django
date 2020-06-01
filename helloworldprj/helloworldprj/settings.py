@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#  - djangoでファイルぱすの基準となるディレクトリ
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -23,8 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+(4a^9tfpr_mg!^zjq@z0y1$vchoek#1l$2al+*9j3dn68uclc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#  - True: エラー発生時にブラウザにその情報が表示される
+#  - False: エラー情報が表示されない
 DEBUG = True
 
+# djangoが受け付けるサーバーのIPアドレス
+#  - インターネットに公開するときに設定する
 ALLOWED_HOSTS = []
 
 

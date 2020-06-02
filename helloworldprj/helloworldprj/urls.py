@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 # モジュールの中では、.を使って相対パスで読み込むモジュールを指定する
 # from .views import Helloworld
 from . import views
@@ -23,6 +23,5 @@ from . import views
 #  - path(<リクエスト>, <繋ぎ先メソッドorクラス>)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', views.helloworldfunc),
-    path('hello_class/', views.HelloworldView.as_view())
+    path('hello/', include('helloworldapp.urls'))
 ]
